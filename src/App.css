@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+
+/* navbar */
+
+.logo {
+  z-index: 9999;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.toggle-button {
+  display: none;
 }
+@media (max-width: 768px) {
+  .primary-navigation {
+    z-index: 999;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    position: absolute;
+    right: 0;
+    top: 60px;
+
+    width: 0px;
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+
+    flex-direction: column;
+    gap: 2em;
+
+    padding: min(24vh, 5rem) 0em;
+
+    background: black;
+  }
+
+  .primary-navigation li {
+    text-align: center;
+  }
+
+  .primary-navigation.active {
+    width: 270px;
+  }
+
+  .toggle-button {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: 4%;
+    right: 15%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.slower {
+  animation-duration: 10s;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* content */
+
+.underline-tag{
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.underline-div{
+  position: absolute;
+  bottom:13%;
+  z-index: 0;
+}
+
+/* graphic */
+
+.graphic-container{
+  position: relative;
+}
+
+.icon-box{
+  position: absolute;
+  top:85%;
+  right:11%;
+}
+
+@media (max-width:768px) {
+  .icon-box{
+    transform: scale(0.6);
+    top:80%;
+    right:7%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width:320px) {
+  .icon-box{
+    transform: scale(0.5);
+    top:78%;
+    right:4%;
+  }
+}
+
+@media (min-width:1024px) {
+  .icon-box{
+    right: 13%;
   }
 }
